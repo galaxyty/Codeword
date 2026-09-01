@@ -1,0 +1,18 @@
+public static class SlotUtility
+{
+    /// <summary>
+    /// «ÿ¥Á ¿Œµ¶Ω∫∞° æÓ¥¿∆¿¿Œ¡ˆ π›»Ø.
+    /// </summary>
+    public static ETeam GetIndexTeam(int index, out int slotIndex)
+    {
+        // »´∆¿, √ª∆¿ ΩΩ∑‘ ¿Œµ¶Ω∫.
+        slotIndex = index / 2;
+
+        if (index % 2 == 0)
+        {
+            return ETeam.Red;
+        }
+
+        return ETeam.Blue;
+    }
+}
