@@ -543,6 +543,9 @@ public class GameManager : MonoBehaviourPunCallbacks
             }
         }
 
+        // 현재 턴 수 증가.
+        _currentHintCount++;
+
         // 턴 종료 판정.
         if ((card.Type == ECard.Neutral || card.Type == ECard.Blue) && State == EState.RedMemberTurn)
         {
@@ -563,10 +566,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             // 모든 횟수 끝나서 블루 차례 종료.
             State = EState.RedLeaderTurn;
-        }
-
-        // 현재 턴 수 증가.
-        _currentHintCount++;        
+        }        
 
         // UI 갱신 동기화.
         photonView.RPC(
