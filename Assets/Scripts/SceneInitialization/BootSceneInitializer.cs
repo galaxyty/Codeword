@@ -11,5 +11,7 @@ public class BootSceneInitializer : MonoBehaviour, ISceneInitializer
     async UniTask Start()
     {
         await SoundManager.Instance.InitialzationAsync();
+
+        SoundManager.Instance.PlayBGM(Consts.kSOUND_MAIN_BGM);
     }
 }

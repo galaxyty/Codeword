@@ -12,6 +12,9 @@ public class UILoginPopup : MonoBehaviourPunCallbacks
     [SerializeField]
     private Button _btnConnect;
 
+    [SerializeField]
+    private UIErrorPopup _errorPopup;
+
     void Awake()
     {
         Application.targetFrameRate = 60;
@@ -51,6 +54,18 @@ public class UILoginPopup : MonoBehaviourPunCallbacks
     /// </summary>
     public override void OnDisconnected(DisconnectCause cause)
     {
+        switch (cause)
+        {
+            case DisconnectCause.MaxCcuReached:
+                // 동접 수 최대.
+                _errorPopup.Show(Consts.kSERVER_ERROR_MAXCCUREACHED);
+                break;
+
+            default:
+                _errorPopup.Show(Consts.kSERVER_ERROR_DEFAULT);
+                break;
+        }
+
         Debug.LogError($"서버 연결 실패 : {cause}");
 
         _btnConnect.interactable = true;

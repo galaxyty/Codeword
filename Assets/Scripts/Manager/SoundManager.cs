@@ -26,7 +26,7 @@ public class SoundManager : BaseSingleton<SoundManager>
         // »ç¿îµå Ä³½Ì.
 
         // BGM.
-        _dicSounds.Add(Consts.kSOUND_BGM, await _resourceLoader.LoadAsync<AudioClip>(Consts.kSOUND_BGM));
+        _dicSounds.Add(Consts.kSOUND_MAIN_BGM, await _resourceLoader.LoadAsync<AudioClip>(Consts.kSOUND_MAIN_BGM));
 
         // SFX.
         _dicSounds.Add(Consts.kSOUND_BUTTON_CLICK, await _resourceLoader.LoadAsync<AudioClip>(Consts.kSOUND_BUTTON_CLICK));
