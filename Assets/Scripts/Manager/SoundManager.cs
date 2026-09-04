@@ -42,7 +42,23 @@ public class SoundManager : BaseSingleton<SoundManager>
             return;
         }
 
-        _bgmAudio.PlayOneShot(_dicSounds[path]);
+        // 같은 사운드가 재생 중이면.
+        if (_bgmAudio.clip == _dicSounds[path])
+        {
+            return;
+        }
+
+        _bgmAudio.clip = _dicSounds[path];
+        _bgmAudio.Play();
+    }
+
+    /// <summary>
+    /// BGM 정지.
+    /// </summary>
+    public void StopBGM()
+    {
+        _bgmAudio.clip = null;
+        _bgmAudio.Stop();
     }
 
     /// <summary>
