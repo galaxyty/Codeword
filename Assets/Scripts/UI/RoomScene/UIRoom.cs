@@ -2,7 +2,6 @@ using ExitGames.Client.Photon;
 using ExitGames.Client.Photon.StructWrapping;
 using Photon.Pun;
 using Photon.Realtime;
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -204,6 +203,8 @@ public class UIRoom : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickStart()
     {
+        SoundManager.Instance.PlaySFX(Consts.kSOUND_BUTTON_CLICK);
+
         if (_gameManager.IsStart == true)
         {
             Debug.Log("게임 중");
@@ -218,6 +219,8 @@ public class UIRoom : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickReady()
     {
+        SoundManager.Instance.PlaySFX(Consts.kSOUND_BUTTON_CLICK);
+
         if (_gameManager.IsStart == true)
         {
             Debug.Log("게임 중");
@@ -232,6 +235,8 @@ public class UIRoom : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickExit()
     {
+        SoundManager.Instance.PlaySFX(Consts.kSOUND_BUTTON_CLICK);
+
         PhotonNetwork.LeaveRoom();
     }
 
@@ -240,6 +245,8 @@ public class UIRoom : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickChangeRed()
     {
+        SoundManager.Instance.PlaySFX(Consts.kSOUND_BUTTON_CLICK);
+
         if (_roomManager.IsTeamFull(ETeam.Red) == true)
         {
             return;
@@ -270,6 +277,8 @@ public class UIRoom : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickChangeBlue()
     {
+        SoundManager.Instance.PlaySFX(Consts.kSOUND_BUTTON_CLICK);
+
         if (_roomManager.IsTeamFull(ETeam.Blue) == true)
         {
             return;

@@ -91,7 +91,7 @@ public class UICardSlot : MonoBehaviourPunCallbacks
         else
         {
             UpdateMemberColorUI();
-        }
+        }        
     }    
 
     /// <summary>
@@ -131,18 +131,33 @@ public class UICardSlot : MonoBehaviourPunCallbacks
             ECard.Basic => _basicCard,
             _ => _basicCard
         };
+
+        UpdateTextColorUI();
     }
 
     // 팀원은 하나의 색깔만 표시.
     private void UpdateMemberColorUI()
     {
         _imgColor.sprite = _neutralCard;
+        _txtName.color = new Color(0, 0, 0);
+    }
+
+    // 글자 색 변경.
+    private void UpdateTextColorUI()
+    {
+        _txtName.color = _card.Type switch
+        {
+            ECard.Neutral => new Color(0, 0, 0),
+            ECard.Basic => new Color(0, 0, 0),
+            _ => new Color(1, 1, 1)
+        };
     }
 
     // 일정 시간 뒤 이미지 변경.
     private void PlayImage(Sprite targetSprite)
     {
         LMotion.Create(0f, 0f, 0.5f).WithOnComplete(() => _imgColor.sprite = targetSprite).RunWithoutBinding();
+        UpdateTextColorUI();
     }
 
     // 카드 크기 애니메이션.
