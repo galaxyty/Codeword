@@ -30,7 +30,7 @@ public class UIBoard : MonoBehaviourPunCallbacks
             slot.SetCardData(_gameManager.GetBoard(i));
             slot.SetGameManager(_gameManager);
             slot.SetPopup(_popup);
-            slot.UpdateNameUI("카드");
+            slot.UpdateNameUI("단어");
             slot.UpdateCardUI();
 
             _gameManager.AddUISlot(slot);

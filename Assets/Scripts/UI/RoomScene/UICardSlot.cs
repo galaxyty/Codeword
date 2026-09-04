@@ -250,7 +250,7 @@ public class UICardSlot : MonoBehaviourPunCallbacks
                 _card.IsOpen = false;
                 _card.Type = ECard.Basic;
 
-                UpdateNameUI("카드");
+                UpdateNameUI("단어");
                 UpdateMemberColorUI();
                 _imgOpen.SetActive(false);
             }
