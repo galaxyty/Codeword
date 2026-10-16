@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             _remainCountArr[(int)ECard.Blue] = 9;
         }
 
-        _remainCountArr[(int)ECard.Neutral] = 8;
+        _remainCountArr[(int)ECard.Neutral] = 7;
         _remainCountArr[(int)ECard.Joker] = 1;
 
         PhotonNetwork.CurrentRoom.SetCustomProperties(
